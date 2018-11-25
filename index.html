@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> My gallery </title>
+  <style type="text/css">
+    button {
+      display: block;
+      width: 300px;
+      height: 50px;
+      margin: 20px auto;
+      background: green;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My gallery</h1>
+  <img src="https://warsawjs.com/static/images/logos/logo-warsawjs-with-white-text.svg" width="400" id="wjs">
+  <img src="https://avatars3.githubusercontent.com/u/34198044?s=460&v=4" width="400" id="sylwia">
+  <img src="https://avatars3.githubusercontent.com/u/6118271?s=460&v=4" width="400" id="piotr">
+
+  <section>
+    <button onclick="toggleSylwia()">toggle Sylwia</button>
+    <button onclick="toggleWjs()">toggle Wjs</button>
+    <button onclick="toggleElement('piotr')">toggle Piotr</button>
+    <button onclick="hideAll()">hide all</button>
+  </section>
+</body>
+<script type="text/javascript">
+
+  function hideAll() {
+    console.log("hide all")
+    let array = ['wjs', 'sylwia', 'piotr']
+    array.forEach(function (el) {
+      hideElement(el)
+    })
+
+  }
+  function toggleElement(id) {
+    let element = document.getElementById(id)
+    element.hidden = !element.hidden
+  }
+
+  function hideElement(id) {
+    let element = document.getElementById(id)
+    element.hidden = true
+  }
+
+  function hideElement(id) {
+    let element = document.getElementById(id)
+    element.hidden = false
+  }
+
+  function toggleSylwia() {
+    toggleElement('sylwia')
+  }
+
+  function toggleWjs() {
+    toggleElement('wjs')
+  }
+
+  function togglePiotr() {
+    toggleElement('piotr')
+  }
+
+</script>
+
+</html>
